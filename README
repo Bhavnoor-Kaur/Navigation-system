@@ -1,0 +1,135 @@
+|-------------------------------------------
+| Name: Bhavnoor Kaur
+| ID:1623727
+| CMPUT 275, Winter 2021
+|
+| Assignment 1: Navigation System (Part 2)
+| ------------------------------------------
+
+Included Files/Directories:
+	* client (Directory):
+				- client.cpp: This file is modified by implementing a two way communication with the
+							  server using socket and communication with the plotter using pipes. The client communicates with the server to get route information.
+
+	* server (Directory):
+				- server.cpp: This file is modified so that it communicates with the client using
+							  socket.
+
+				- digraph.cpp: Implementation of the Digraph class. This file is unmodified.
+
+				- digraph.h: Header file of the Digraph class. This file is unmodified.
+
+				- dijkstra.cpp: Implementation of the Dijkstra's algorithm. This file is unmodified.
+
+				- dijkstra.h: Header file for the Dijkstra's algorithm. This file is unmodified
+
+				- heap.h: Header file for heap implementation. This file is unmodified
+
+				- wdigraph.h: Implementation of the weighted directed graph class derived from the
+							  Digraph class. This file is unmodified.
+
+
+	* plotter: An executable file that loads the map of edmonton and makes it possible to scroll
+			   around, zoom in/ zoom out and select start and end points to get route information.
+
+	* Makefile: The makefile contains targets to create server and client executables in their
+				respective directories. It also contains target to clean, which removes all the pipes, executables and object files from all the directories. There is an additional target added which lets you run the program with a default port and IP address
+	* README
+
+
+Makefile Targets:
+	- make all: runs the server and client targets to generate all the executables.
+	- make server: links all the object files for the server and builds an executable called server
+				   in the respective directory
+	- make server.o: compiles the "server.cpp" into an object file "server.o"
+	- make dikstra.o: compiles the "dijkstra.cpp" into an object file "dijkstra.o"
+	- make digraph.o: compiles the "digraph.cpp" into an object file "digraph.o"
+	- make client: builds an executable called client in the respective directory.
+	- make client.o: compiles the "client.cpp" into an object file "client.o"
+	- make run: runs the server and client targets to create all executables. It also opens three
+				different terminals to run the program. One terminal executes the server with a default port of 8888, another terminal executes the client with the default port of 8888 and default IP address of 127.0.0.1. Finally the last terminal executes the plotter to open the scrollable map of edmonton.
+	- make clean: removes all the executables, objects and named pipes.
+
+
+Running Instructions:
+
+---------------------------------Server Instructions-------------------------------------------------
+
+Compile the server executable by running the "make server" command from the terminal in the main working directory. This will create the executable "server" in the server directory.
+To run, the server, type the following in the terminal from the main directory:
+
+./server/server [PORT]
+
+where PORT is the port number you would like to use (use a higher port number in the range of 5000 to 64000), for example:
+
+./server/server 8888
+
+---------------------------------Client Instructions-------------------------------------------------
+
+Compile the client executable by running the "make client" command from the terminal in the main working directory. This will create the executable "client" in the client directory.
+To run the client, type the foolowing in the terminal from the main directory:
+
+./client/client [PORT] [IP ADDRESS]
+
+where PORT is the port number (same as client) and the IP ADDRESS correspond to the server's IP address. For example:
+
+./client/client 8888 127.0.0.1
+
+--------------------------------------Plotter--------------------------------------------------------
+
+After executing server and client respectively, from the main working directory, execute the plotter by typing the following in the terminal:
+
+./plotter
+
+This should open up the visual Edmonton map, where you can scroll around, zoom in/zoom out and select start and end points for any trip.
+
+Select any start and end points and the plotter displays the least cpst path between the two. You can select multiple start and end points.
+
+----------------------------------Sample Running Instructions----------------------------------------
+
+Type the following commands in the terminal from the main working directory in the given order:
+
+make server
+make client
+./server/server 8888
+
+////////////////In new terminal Window///////////////////
+./client/client 8888 127.0.0.1
+
+////////////////In new terminal Window///////////////////
+./plotter
+
+Alternatively, the following commands can also be used:
+
+make
+./server/server 8888
+
+////////////////In new terminal Window//////////////////
+./client/client 8888 127.0.0.1
+
+////////////////In new terminal Window//////////////////
+./plotter
+
+Here, the "make" command compiles and builds both the executables "client" and "server".
+
+--------------------------------- Running everything Together----------------------------------------
+
+To execute the program, that is to run the server, client and plotter, all by one command, type the following in the terminal from the main working directory:
+
+make run
+
+This Makefile command compiles and creates the executables "server" and "client" and runs the "server", "client" and "plotter" in three different windows with a default value of PORT as 8888 and default value of IP ADDRESS as 127.0.0.1.
+-----------------------------------------------------------------------------------------------------
+
+To clean all the executables, pipes and the object file, simply run the "make clean" command.
+
+-----------------------------------------------------------------------------------------------------
+
+Notes and Asumptions:
+
+	- All the Makefile targets are written to work from the main directory itself.
+	- There is an additional Makefile target that allows to run the complete program (i.e server,
+	  client and plotter) with a default value of PORT and IP ADDRESS.
+	- edmonton-roads-2.0.1.txt should be included in the main working directory while testing.
+	- part2 starter code was used in this part of the assignment, that is why heap.h is included as it
+	  is crucial for the working of dijkstra's according to the starter code implementation.
