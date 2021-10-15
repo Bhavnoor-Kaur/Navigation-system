@@ -1,8 +1,11 @@
 A server client model that uses pipes and sockets for communication. Lets you choose different points on the interactive map and shows the shortest path 
 between the two points.
 
+![jtPbHUVe2T](https://user-images.githubusercontent.com/66292885/137531531-af456888-5592-44bc-9a41-04fc9c2b90b3.png)
+
+
 ## Running Instructions
-----------------------------------------------------------------Server Instructions--------------------------------------------------------------------
+------------------------------------------------------Server Instructions------------------------------------------------------------
 
 Compile the server executable by running the "make server" command from the terminal in the main working directory. This will create the executable "server" in the server directory.
 To run, the server, type the following in the terminal from the main directory:
@@ -13,7 +16,7 @@ where PORT is the port number you would like to use (use a higher port number in
 
 ./server/server 8888
 
-------------------------------------------------------------------Client Instructions------------------------------------------------------------------
+------------------------------------------------------Client Instructions--------------------------------------------------
 
 Compile the client executable by running the "make client" command from the terminal in the main working directory. This will create the executable "client" in the client directory.
 To run the client, type the foolowing in the terminal from the main directory:
@@ -24,7 +27,7 @@ where PORT is the port number (same as client) and the IP ADDRESS correspond to 
 
 ./client/client 8888 127.0.0.1
 
-----------------------------------------------------------------------Plotter--------------------------------------------------------------------------
+----------------------------------------------------------Plotter----------------------------------------------------------
 
 After executing server and client respectively, from the main working directory, execute the plotter by typing the following in the terminal:
 
@@ -35,7 +38,7 @@ This should open up the visual Edmonton map, where you can scroll around, zoom i
 Select any start and end points and the plotter displays the least cpst path between the two. You can select multiple start and end points.
 
 
---------------------------------------------------------------Sample Running Instructions--------------------------------------------------------------
+--------------------------------------------------Sample Running Instructions------------------------------------------------
 
 Type the following commands in the terminal from the main working directory in the given order:
 
@@ -70,7 +73,7 @@ make
 
 Here, the "make" command compiles and builds both the executables "client" and "server".
 
---------------------------------------------------------------Running everything Together--------------------------------------------------------------
+--------------------------------------------------Running everything Together-------------------------------------------------
 
 To execute the program, that is to run the server, client and plotter, all by one command, type the following in the terminal from the main working directory:
 
@@ -78,11 +81,11 @@ make run
 
 This Makefile command compiles and creates the execuatbles "server" and "client" and runs "server", "client" and "plotter" in three different windows with default value of the PORT as 8888 and default value of the IP ADDRESS as 127.0.0.1.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
 To clean all the executables, pipes and the object file, simply run the "make clean" command.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
 ## Makefile Commands
   - make all: runs the server and client targets to generate all the executables.
