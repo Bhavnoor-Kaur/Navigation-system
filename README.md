@@ -34,4 +34,3 @@ This should open up the visual Edmonton map, where you can scroll around, zoom i
 
 Select any start and end points and the plotter displays the least cpst path between the two. You can select multiple start and end points.
 
-**Note: The plotter file is not included in the repository because the executable was too large
