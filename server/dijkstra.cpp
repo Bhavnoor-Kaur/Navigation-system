@@ -1,3 +1,11 @@
+// -----------------------------------------
+// Name: Bhavnoor Kaur
+// ID:1623727
+// CMPUT 275, Winter 2021
+//
+// Assignment 1: Navigation System (Part 2)
+// -----------------------------------------
+
 #include <cassert>
 #include "dijkstra.h"
 #include "heap.h"
