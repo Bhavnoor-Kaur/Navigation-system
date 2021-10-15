@@ -1,7 +1,7 @@
 A server client model that uses pipes and sockets for communication. Lets you choose different points on the interactive map and shows the shortest path 
 between the two points.
 
-##Running Instructions
+## Running Instructions
 ---------------------------------Server Instructions-------------------------------------------------
 
 Compile the server executable by running the "make server" command from the terminal in the main working directory. This will create the executable "server" in the server directory.
@@ -74,7 +74,7 @@ To clean all the executables, pipes and the object file, simply run the "make cl
 
 -----------------------------------------------------------------------------------------------------
 
-##Makefile Commands
+## Makefile Commands
   - make all: runs the server and client targets to generate all the executables.
 	- make server: links all the object files for the server and builds an executable called server
 				   in the respective directory
@@ -86,7 +86,7 @@ To clean all the executables, pipes and the object file, simply run the "make cl
 	- make run: runs the server and client targets to create all executables. It also opens three different terminals to run the program. One terminal executes the server with a default port of 8888, another terminal executes the client with the default port of 8888 and default IP address of 127.0.0.1. Finally the last terminal executes the plotter to open the scrollable map of edmonton.
 	- make clean: removes all the executables, objects and named pipes.
 
-##Notes and Assumptions
+## Notes and Assumptions
 
   - All the Makefile targets are written to work from the main directory itself.
 	- There is an additional Makefile target that allows to run the complete program (i.e server,
